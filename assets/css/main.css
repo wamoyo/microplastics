@@ -3958,6 +3958,8 @@
 #mail {
   display: block;
   width: 100%;
+  height: auto;
+  padding: .59em;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   text-align: center;
@@ -3973,17 +3975,15 @@
 #button {
   display: inline-block;
   width: 100%;
+  height: auto;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
-@media all and (min-width: 480px) {
+@media all and (min-width: 485px) {
   #mail {
     display:inline-block;
-    position: relative;
-    bottom: 1px;
     width: 200px;
-    height: 2.85em;
     text-align: left;
     border-radius: 4px;
     border-top-right-radius: 0;
@@ -4006,7 +4006,20 @@
   }
 }
 
+
 @media all and (min-width: 600px) {
+  #mail:focus {
+    width: 300px;
+  }
+}
+
+@media all and (min-width: 745px) {
+  #mail:focus {
+    width: 200px;
+  }
+}
+
+@media all and (min-width: 900px) {
   #mail:focus {
     width: 300px;
   }
