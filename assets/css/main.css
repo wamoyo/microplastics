@@ -3755,6 +3755,10 @@
 			font-size: 1.75em;
 		}
 
+    #banner .button {
+      margin: .25em;
+    }
+
 @media all and (max-width: 740px) {
   #banner .inner {
     max-width: 400px;
