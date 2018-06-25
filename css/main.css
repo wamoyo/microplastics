@@ -4036,10 +4036,16 @@
 }
 
 #formMessage.success {
-  color: #00dc20;
+  border-radius: 4px;
+  border: 2px solid #5ce054;
+  background: #76bf80;
+  padding: .5em;
 }
 
 #formMessage.fail {
-  color: #cc0020;
+  border-radius: 4px;
+  border: 2px solid #f994a4;
+  background: #ec6479;
+  padding: .5em;
 }
 
