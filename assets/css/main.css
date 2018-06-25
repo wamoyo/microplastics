@@ -4025,3 +4025,21 @@
   }
 }
 
+#mail:disabled,
+#button:disabled {
+  color: #aaa;
+}
+
+#formMessage {
+  margin-bottom: .25em;
+  font-weight: bold;
+}
+
+#formMessage.success {
+  color: #00dc20;
+}
+
+#formMessage.fail {
+  color: #cc0020;
+}
+
