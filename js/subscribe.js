@@ -7,6 +7,8 @@
     var hidden = document.getElementById('hidden')
     var submit = document.getElementById('button')
     var formMessage = document.getElementById('formMessage')
+    var interval
+
 
     var email = ''
 
@@ -18,21 +20,20 @@
 
         var email = input.value || ''
 
-        fetch('https://api.buttondown.email/v1/subscribers', {
+        fetch('https://wamoyo.lib.id/microplastics-lab-email-subscriber@dev/subscribe/', {
           method: 'POST',
           body: JSON.stringify({email: email}),
           headers: {
-            'Authorization': 'Token ' + '',
             'Content-type': 'application/json'
           }
+        }).then(function(option) {
+          console.log('Response from OPTIONS: ', option)
+          return option.json()
         }).then(function(response) {
-          console.log(response)
-          if (response.statusText == 'Created') return created(email)
-          if (response.status == 400) badRequest(email)
+          console.log('Response from POST: ', response)
+          if (response.statusCode == 200) return created(email)
+          if (response.statusCode == 400) badRequest(email)
           else errorOut(email)
-          //return response.json()
-        }).then(function(json) {
-          console.log(json)
         }).catch(function (err) {
           console.error(err)
           return errorOut(email)
@@ -45,18 +46,21 @@
         formMessage.classList.remove('fail')
         formMessage.classList.add('success')
         formMessage.textContent = message
-        setTimeout(function () {
-          formMessage.textContent = ''
-          input.value = ''
-        }, 7000)
+        //interval = setTimeout(function () {
+        //  formMessage.classList.remove('fail')
+        //  formMessage.classList.remove('success')
+        //  formMessage.textContent = ''
+        //  input.value = ''
+        //}, 7000)
         input.removeAttribute('disabled')
         submit.removeAttribute('disabled')
       }
 
       function badRequest (email) {
+        //clearInterval(interval)
         var message = ''
-        if (email == '') message = 'Please provide an email.'
-        else message = 'There appears to be something wrong with the email you entered.'
+        if (email == '') message = 'Please provide a valid email (or an alternate email).'
+        else message = 'Please provide a valid email (or an alternate email).'
         console.log(message)
         formMessage.classList.remove('success')
         formMessage.classList.add('fail')
@@ -66,6 +70,7 @@
       }
 
       function errorOut (email) {
+        //clearInterval(interval)
         var message = 'Something went wrong on our end when trying to subscribe ' + email + '. Email Costa to fix this at: costa@innovationbound.com.'
         console.log(message)
         formMessage.textContent = message
