@@ -20,7 +20,7 @@
 
         var email = input.value || ''
 
-        fetch('https://wamoyo.lib.id/microplastics-lab-email-subscriber@dev/subscribe/', {
+        fetch('https://wamoyo.lib.id/microplastics-lab-email-subscriber@0.0.1/subscribe/', {
           method: 'POST',
           body: JSON.stringify({email: email}),
           headers: {
