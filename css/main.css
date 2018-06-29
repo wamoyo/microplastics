@@ -3435,15 +3435,6 @@
         font-weight: bold;
       }
 
-@media all and (max-width: 395px) {
-  #header div.logo {
-    left: .5em;
-  }
-  #header > .logo a {
-    font-size: .95em;
-  }
-}
-
         #header > .logo a:hover {
           color: #3498db;
         }
