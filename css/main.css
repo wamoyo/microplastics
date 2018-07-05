@@ -1586,7 +1586,7 @@
 
   body {
     background-color: #fff;
-    color: #999999;
+    color: #555;
   }
 
   body, input, select, textarea {
@@ -1806,7 +1806,7 @@
 
   a {
     font-weight: bold;
-    color: #999999;
+    color: #222;
   }
 
     a:hover {
